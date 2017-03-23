@@ -1,0 +1,44 @@
+#include "DOF.h"
+
+////////////////////////////////////////////////////////////////////////////////
+DOF::DOF()
+{
+	value = 0;
+	min = -10000;
+	max = 10000;
+}
+
+
+DOF::~DOF()
+{
+}
+
+////////////////////////////////////////////////////////////////////////////////
+void DOF::setValue(float f)
+{
+	if (f > max){
+		value = max;
+	}
+	else if (f < min){
+		value = min;
+	}
+	else{
+		value = f;
+	}
+}
+
+void DOF::setMin(float f)
+{
+	min = f;
+}
+
+void DOF::setMax(float f)
+{
+	max = f;
+}
+
+float DOF::getValue()
+{
+	return value;
+}
+////////////////////////////////////////////////////////////////////////////////
